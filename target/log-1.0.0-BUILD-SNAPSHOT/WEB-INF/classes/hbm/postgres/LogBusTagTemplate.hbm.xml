@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.simple.server.domain.contract">
+
+	<class name="BusTagTemplate" table="[bus sql template]">
+		<id name="tag" column="tag">
+        	<generator class="assigned" /> 
+    	</id>
+										
+		<property name="sqlTemplate" column="[sql_template]" />		
+		<property name="classificatorId" column="[classificator_id]" />
+		
+		<set name="params"  cascade="save-update" inverse="false">
+	        <key column="[tag]"/>
+	        <one-to-many class="com.simple.server.domain.contract.BusTagParam"/>
+    	</set>
+ 
+	</class>
+</hibernate-mapping>

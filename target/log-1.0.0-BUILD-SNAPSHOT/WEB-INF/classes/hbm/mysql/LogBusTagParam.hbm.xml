@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping package="com.simple.server.domain.contract">
+	
+	<class name="BusTagParam" table="[bus sql param]">
+
+		<id name="id" column="id">
+			<generator class="native"/>        	
+		</id>				
+
+		<many-to-one name="tagTemplate"  
+					 class="com.simple.server.domain.contract.BusTagTemplate"  									
+    				  unique="true" not-null="false" insert="false" update="false">
+     		<column name="[parent_tag]" ></column>
+    	</many-to-one>	
+    	
+		<property name="paramName" column="[param]"/> 
+		<property name="paramDesc" column="[desc]" />
+		<property name="sqlType" column="[type]" />
+		<property name="sample" column="[sample]" />
+		
+	</class>
+</hibernate-mapping>

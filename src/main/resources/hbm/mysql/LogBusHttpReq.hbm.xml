@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.simple.server.domain.contract">
+
+	<class name="BusHttpReq" table="[bus http req]">
+		<id name="id" column="id">
+			<generator class="native"/>        	
+		</id>					
+		
+		<property name="contextPath" column="[context_path]" />
+		<property name="contentType" column="[content_type]" />
+		<property name="localAddr" column="[local_addr]" />
+		<property name="localName" column="[local_name]" />
+		<property name="method" column="[method]" />
+		<property name="pathInfo" column="[path_info]" />
+		<property name="protocol" column="[protocol]" />
+		<property name="queryString" column="[query_string]" />
+		<property name="remoteAddr" column="[remote_addr]" />		
+		<property name="remoteHost" column="[remote_host]" />		
+		<property name="remotePort" column="[remote_port]" />
+		<property name="remoteUser" column="[remote_user]" />
+		<property name="serverName" column="[server_name]" />
+		<property name="serverPort" column="[server_port]" />
+		<property name="requestURL" column="[request_url]" />
+		<property name="incomingDatetime" column="[incoming_datetime]" />
+	</class>
+</hibernate-mapping>
