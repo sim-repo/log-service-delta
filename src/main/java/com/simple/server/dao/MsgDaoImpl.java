@@ -36,9 +36,8 @@ public class MsgDaoImpl implements MsgDao{
 		
 	}
 
-	@Override
-	@Transactional
-	public void insertBus(List<IContract> msgList) throws Exception {
+	@Override	
+	public void batchInsertBus(List<IContract> msgList) throws Exception {
 		int count=0;
 		for(IContract msg: msgList){
 			try{			
@@ -53,6 +52,24 @@ public class MsgDaoImpl implements MsgDao{
 			}
 		}
 	}
+	
+	@Override
+	public void insert(IContract msg) throws Exception {
+		currentSession().save(msg);	
+	}
+
+	@Override
+	public void insertBus(List<IContract> msgList) throws Exception {
+		for(IContract msg: msgList){
+			try{					
+				currentSession().save(msg);	
+				currentSession().flush();
+				currentSession().clear();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}					
+		}		
+	}
 
 	@Override
 	public void send(SysMessage message) throws Exception {
@@ -61,7 +78,7 @@ public class MsgDaoImpl implements MsgDao{
 	}
 
 	@Override
-	public void insertSys(List<SysMessage> msgList) throws Exception {
+	public void batchInsertSys(List<SysMessage> msgList) throws Exception {
 		int count=0;
 		for(SysMessage msg: msgList){
 			currentSession().save(msg);	

@@ -56,7 +56,7 @@ public class HomeController {
 		List<IContract> list = new ArrayList();
 		list.add(classificator);
 		try {
-			appConfig.getMsgDao().insertBus(list);
+			appConfig.getMsgDao().batchInsertBus(list);
 		} catch (Exception e) {	
 			e.printStackTrace();
 		}

@@ -1,5 +1,10 @@
 package com.simple.server.domain;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import com.simple.server.config.AppConfig;
+import com.simple.server.config.EndpointType;
 import com.simple.server.domain.contract.IContract;
 
 @SuppressWarnings("serial")
@@ -10,7 +15,11 @@ public abstract class AContract implements IContract {
 	protected Integer id;
 
 	protected String juuid;
+	
+	protected String eventId;
 
+	protected String senderId;
+	
 	protected String endPointId;
 
 	protected String serviceIdFrom;
@@ -25,7 +34,7 @@ public abstract class AContract implements IContract {
 
 	protected String messageBodyValue;
 
-	protected String logDatetime;
+	protected String logDatetime = new SimpleDateFormat(AppConfig.DATEFORMAT).format(Calendar.getInstance().getTime());
 
 	protected String loggerId;
 
@@ -59,6 +68,22 @@ public abstract class AContract implements IContract {
 
 	public void setJuuid(String juuid) {
 		this.juuid = juuid;
+	}
+	
+	public String getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(String eventId) {
+		this.eventId = eventId;
+	}
+	
+	public EndpointType getSenderId() {
+		return EndpointType.valueOf(senderId);
+	}
+
+	public void setSenderId(EndpointType senderId) {
+		this.senderId = senderId.toString();
 	}
 
 	public String getEndPointId() {

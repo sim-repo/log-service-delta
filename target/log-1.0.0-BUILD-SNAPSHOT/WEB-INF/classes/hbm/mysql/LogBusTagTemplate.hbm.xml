@@ -7,19 +7,38 @@
 <hibernate-mapping package="com.simple.server.domain.contract">
 
 	<class name="BusTagTemplate" table="[bus sql template]">
-		<id name="tag" column="tag">
-        	<generator class="assigned" /> 
+		<id name="id" column="id">
+        	<generator class="native" /> 
     	</id>
 										
 		<property name="sqlTemplate" column="[sql_template]" />		
-		<property name="description" column="[desc]" />
-		<property name="classificatorId" column="[classificator_id]" />
+		<property name="desc" column="[desc]" />
+		<property name="searchingTag1" column="[searching_tag1]" />
+		<property name="searchingTag2" column="[searching_tag2]" />
+		<property name="searchingTag3" column="[searching_tag3]" />
+		<property name="searchingTag4" column="[searching_tag4]" />
+		<property name="searchingTag5" column="[searching_tag5]" />
+		<property name="searchingTag6" column="[searching_tag6]" />
+		<property name="searchingTag7" column="[searching_tag7]" />
+		<property name="searchingTag8" column="[searching_tag8]" />
+		<property name="searchingTag9" column="[searching_tag9]" />
+		<property name="searchingTag10" column="[searching_tag10]" />
+		<property name="searchingTag11" column="[searching_tag11]" />
+		<property name="searchingTag12" column="[searching_tag12]" />
+		<property name="searchingTag13" column="[searching_tag13]" />
+		<property name="searchingTag14" column="[searching_tag14]" />
+		<property name="searchingTag15" column="[searching_tag15]" />
+		<property name="searchingTag16" column="[searching_tag16]" />
+		<property name="searchingTag17" column="[searching_tag17]" />
+		<property name="searchingTag18" column="[searching_tag18]" />
+		<property name="searchingTag19" column="[searching_tag19]" />
+		<property name="searchingTag20" column="[searching_tag20]" />		
 		
 		<set name="params"  
 			 cascade="all" 
 			 inverse="false" 
 			 lazy="false">
-	        <key column="[parent_tag]"/>
+	        <key column="[parent_id]"/>
 	        <one-to-many class="com.simple.server.domain.contract.BusTagParam"/>
     	</set>
  

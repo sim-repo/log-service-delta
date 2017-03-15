@@ -9,6 +9,7 @@ import com.simple.server.domain.contract.IContract;
 public interface IService {
 	void send(IContract message) throws Exception;
 	void insertBus(List<IContract> msgList) throws Exception;
+	void insert(List<IContract> msgList) throws Exception;
 	void send(SysMessage message) throws Exception;
 	void insertSys(List<SysMessage> msg) throws Exception;	
 	List<IContract> readAll(IContract msg) throws Exception;

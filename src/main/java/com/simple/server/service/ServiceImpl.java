@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.simple.server.config.AppConfig;
 import com.simple.server.domain.SysMessage;
@@ -28,8 +29,16 @@ public class ServiceImpl implements IService{
 	}
 
 	@Override
+	@Transactional
 	public void insertBus(List<IContract> msgList) throws Exception {
 		getAppConfig().getMsgDao().insertBus(msgList);
+	}
+	
+	@Override
+	public void insert(List<IContract> msgList) throws Exception {
+		for(IContract msg: msgList){
+			getAppConfig().getMsgDao().insert(msg);
+		}
 	}
 
 	@Override

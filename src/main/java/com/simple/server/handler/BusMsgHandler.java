@@ -8,7 +8,7 @@ public class BusMsgHandler extends AbstractMsgHandler{
 	
 	public void handleBusJsonMsg(String json) throws Exception {		
 		
-		//System.out.println("log handleBusJsonMsg"+ json);
+		System.out.println("log-service:::::"+ json);
 		getAppConfig().getDirtyBusJsonQueue().put(json);
 	}
 
