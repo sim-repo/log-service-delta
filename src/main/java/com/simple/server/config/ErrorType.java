@@ -16,11 +16,8 @@ public enum ErrorType {
 					return err;
 				}
 			}
-		}
-		// you may return a default value
+		}	
 		return getDefault();
-		// or throw an exception
-		// throw new IllegalArgumentException("Invalid color: " + value);
 	}
 
 	public String toValue() {

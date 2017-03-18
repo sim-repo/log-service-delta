@@ -4,21 +4,15 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.simple.server.domain.contract">						
-	<class name="ErrPubMsg" table="[log pub err]">
+	<class name="SuccessSubMsg" table="[log sub success]">
 		<id name="id" column="[id]">
 			<generator class="native" />
 		</id>							
 		
-		<property name="errorId" column="[error_id]">
-		    <type name="org.hibernate.type.EnumType">
-		        <param name="enumClass">com.simple.server.config.EndpointType</param>
-		        <param name="useNamed">true</param>
-		    </type>
-		</property>
 		
 		<property name="juuid" column="[uuid]"/>		
-		<property name="eventId" column="[event_id]"/>					
-		<property name="details" column="[details]"/>		
+		<property name="eventId" column="[event_id]"/>									
+		<property name="logDatetime" column="[log_datetime]"/>					
 		
 		<property name="senderId" column="[sender_id]">
 		    <type name="org.hibernate.type.EnumType">
@@ -27,13 +21,12 @@
 		    </type>
 		</property>
 		
-		<property name="subscriberId" column="[subscriber_id]">
+		<property name="publisherId" column="[publisher_id]">
 		    <type name="org.hibernate.type.EnumType">
 		        <param name="enumClass">com.simple.server.config.EndpointType</param>
 		        <param name="useNamed">true</param>
 		    </type>
 		</property>
 		
-		<property name="logDatetime" column="[log_datetime]"/>
 	</class>
 </hibernate-mapping>

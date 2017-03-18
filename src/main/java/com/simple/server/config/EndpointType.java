@@ -16,11 +16,8 @@ public enum EndpointType {
 					return endpoint;
 				}
 			}
-		}
-		// you may return a default value
-		return getDefault();
-		// or throw an exception
-		// throw new IllegalArgumentException("Invalid color: " + value);
+		} 
+		return getDefault();	
 	}
 
 	public String toValue() {

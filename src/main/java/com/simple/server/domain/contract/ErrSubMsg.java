@@ -1,28 +1,23 @@
 package com.simple.server.domain.contract;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.simple.server.domain.AContract;
 
-@JsonAutoDetect
-@JsonDeserialize(as = SuccessPubMsg.class)
+@SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SuccessPubMsg extends AContract{
+@JsonDeserialize(as = ErrSubMsg.class)
+public class ErrSubMsg extends AContract{
 	
 	private Integer id;
-	private String storeClass;		
+	private String storeClass;	
 	
-	@Override
-	public String getClazz() {
-		return this.getClass().getName();
-	}
 	public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
-	}
+	}	
 	public String getStoreClass() {
 		return storeClass;
 	}

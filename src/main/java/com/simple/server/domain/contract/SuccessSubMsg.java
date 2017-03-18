@@ -5,10 +5,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.simple.server.domain.AContract;
 
+
 @JsonAutoDetect
-@JsonDeserialize(as = SuccessPubMsg.class)
+@JsonDeserialize(as = SuccessSubMsg.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SuccessPubMsg extends AContract{
+public class SuccessSubMsg extends AContract{
 	
 	private Integer id;
 	private String storeClass;		

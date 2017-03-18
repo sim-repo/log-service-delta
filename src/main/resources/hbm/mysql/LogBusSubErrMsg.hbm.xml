@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.simple.server.domain.contract">						
-	<class name="ErrPubMsg" table="[log pub err]">
+	<class name="ErrSubMsg" table="[log sub err]">
 		<id name="id" column="[id]">
 			<generator class="native" />
 		</id>							
@@ -27,7 +27,7 @@
 		    </type>
 		</property>
 		
-		<property name="subscriberId" column="[subscriber_id]">
+		<property name="publisherId" column="[publisher_id]">
 		    <type name="org.hibernate.type.EnumType">
 		        <param name="enumClass">com.simple.server.config.EndpointType</param>
 		        <param name="useNamed">true</param>
