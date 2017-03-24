@@ -51,7 +51,7 @@ public class TaskRunner  {
         	 t.setExecutor(executor);
         	 t.setReentrantLock(lock);
         	 t.setCondition(condition);                	
-        	 t.setLogMessageService((IService)appContext.getBean("msgService") );        	
+        	 t.setLogMessageService((IService)appContext.getBean("msgLogService") );        	
         	 mediator.addObserver(t);
         	 t.addObserver(mediator);
         	 executor.submit(t);

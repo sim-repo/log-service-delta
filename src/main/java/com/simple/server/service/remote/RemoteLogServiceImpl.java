@@ -27,5 +27,4 @@ public class RemoteLogServiceImpl implements IRemoteLogService{
 		List<IContract> res = getAppConfig().getMsgService().readbySQLCriteria(msg, sql);	
 		return res;
 	}
-		
 }

@@ -15,8 +15,7 @@
 		<property name="serviceRoleTo" column="[service_role_to]" />
 		<property name="serviceIdFrom" column="[service_id_from]" />
 		<property name="serviceIdTo" column="[service_id_to]" />
-		<property name="messageHeaderValue" column="[header_value]" />
-		<property name="messageBodyValue" column="[body_value]" />
+		<property name="messageHeaderValue" column="[header_value]" />		
 		<property name="endPointId" column="[endpoint_id]" />
 		<property name="outcomingDatetime" column="[outcoming_datetime]" />		
 		<property name="incomingDatetime" column="[incoming_datetime]" />		

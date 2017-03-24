@@ -12,7 +12,7 @@ import com.simple.server.domain.SysMessage;
 import com.simple.server.domain.contract.IContract;
 
 
-@Service("msgService")
+@Service("msgLogService")
 @Scope("singleton")
 public class ServiceImpl implements IService{
 	

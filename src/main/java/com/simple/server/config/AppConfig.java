@@ -2,6 +2,8 @@ package com.simple.server.config;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
@@ -21,7 +23,6 @@ import com.simple.server.service.IService;
 @Scope("singleton")
 public class AppConfig {
 
-	
 	public final static String DATEFORMAT = "dd.MM.yyyy HH:mm:ss.SSSz";
 
 	private Subscriber subscriber = new Subscriber();
@@ -33,7 +34,7 @@ public class AppConfig {
 	private MessageChannel srvLogChannel;
 
 	@Autowired
-	private IService msgService;
+	private IService msgLogService;
 
 	@Autowired
 	MsgDao msgDao;
@@ -49,6 +50,9 @@ public class AppConfig {
 
 	private Mediator mediator = new Mediator();
 
+	
+	private static final Logger logger = LogManager.getLogger(AppConfig.class);
+	
 	public Mediator getMediator() {
 		return mediator;
 	}
@@ -62,7 +66,7 @@ public class AppConfig {
 	}
 
 	public IService getMsgService() {
-		return msgService;
+		return msgLogService;
 	}
 
 	public MsgDao getMsgDao() {
@@ -96,7 +100,11 @@ public class AppConfig {
 	public LinkedBlockingQueue<AbstractLogMsg> getBusLogMsgQueue() {
 		return busLogMsgQueue;
 	}
-	
+		
+	public static Logger getLogger() {
+		return logger;
+	}
+
 	public void initDirtyBusJsonQueue(int size){
 		this.dirtyBusJsonQueue = new LinkedBlockingQueue<>(size);
 	}

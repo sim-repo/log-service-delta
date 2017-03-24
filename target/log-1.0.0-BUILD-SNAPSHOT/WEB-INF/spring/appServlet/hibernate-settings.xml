@@ -67,7 +67,13 @@
 				<value>hbm/mysql/LogBusClassificator.hbm.xml</value>			
 				<value>hbm/mysql/LogBusFilterGroup.hbm.xml</value>	
 				<value>hbm/mysql/LogBusFilterItem.hbm.xml</value>		
-				<value>hbm/mysql/LogBusPubMsg.hbm.xml</value>			
+				<value>hbm/mysql/LogBusPubMsg.hbm.xml</value>	
+				<value>hbm/mysql/LogBusSubMsg.hbm.xml</value>	
+				<value>hbm/mysql/LogBusPubErrMsg.hbm.xml</value>		
+				<value>hbm/mysql/LogBusSubErrMsg.hbm.xml</value>	
+				<value>hbm/mysql/PubSuccessMsg.hbm.xml</value>
+				<value>hbm/mysql/SubSuccessMsg.hbm.xml</value>		
+				<value>hbm/mysql/LogBusDefErrMsg.hbm.xml</value>
 			</list>
 		</property>		
 	</bean>

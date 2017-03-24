@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.simple.server.config.AppConfig;
 import com.simple.server.domain.SysMessage;
-import com.simple.server.domain.contract.IContract;
-import com.simple.server.lifecycle.HqlStepsType;
 import com.simple.server.mediators.CommandType;
 
 @Service("SrvMsgTask")
