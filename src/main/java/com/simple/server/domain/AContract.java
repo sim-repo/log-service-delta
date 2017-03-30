@@ -7,6 +7,7 @@ import com.simple.server.config.AppConfig;
 import com.simple.server.config.EndpointType;
 import com.simple.server.config.ErrorType;
 import com.simple.server.domain.contract.IContract;
+import com.simple.server.util.DateTimeConverter;
 
 @SuppressWarnings("serial")
 public abstract class AContract implements IContract {
@@ -30,7 +31,7 @@ public abstract class AContract implements IContract {
 	protected String incomingDatetime;
 	protected String messageHeaderValue;
 	protected String messageBodyValue;
-	protected String logDatetime = new SimpleDateFormat(AppConfig.DATEFORMAT).format(Calendar.getInstance().getTime());
+	protected String logDatetime = DateTimeConverter.getCurDate();
 	protected String loggerId;
 	protected String methodHandler;
 	protected String serviceRoleFrom;

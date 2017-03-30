@@ -16,6 +16,7 @@
 		<postgre-version>9.4.1208-atlassian-hosted</postgre-version>
 		<hibernate-version>4.3.5.Final</hibernate-version>
 		<jackson-version>2.8.0</jackson-version>
+		<jodatime-version>2.9</jodatime-version>
 	</properties>
 	
 	<dependencies>
@@ -103,6 +104,13 @@
 		    <groupId>postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
 		    <version>9.1-901.jdbc4</version>
+		</dependency>
+		
+		<!-- Joda Time -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${jodatime-version}</version>
 		</dependency>
 		
 		<!-- Jackson -->

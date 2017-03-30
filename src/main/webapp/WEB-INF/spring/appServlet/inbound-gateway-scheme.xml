@@ -35,11 +35,11 @@
 	<int:channel id="srvLogChannel"/>
 	
 	<bean id="blq" class="org.apache.activemq.command.ActiveMQQueue">
-		<constructor-arg value="business.log.queue"/>
+		<constructor-arg value="amq.log.async.bus.queue"/>
 	</bean>
 	
 	<bean id="slq" class="org.apache.activemq.command.ActiveMQQueue">
-		<constructor-arg value="service.log.queue"/>
+		<constructor-arg value="amq.log.async.srv.queue"/>
 	</bean>
 	
 	<int-jms:inbound-gateway request-channel="busLogChannel"
@@ -63,6 +63,6 @@
 	<int:service-activator id="business-activator"
                                          ref="srvMsgHandler"
                                          method="handleSrvJsonMsg"
-                                         input-channel="srvLogChannel"/>                                         		 		
+                                         input-channel="srvLogChannel"/>                                        		 		
 
 </beans>			

@@ -19,6 +19,7 @@ import com.simple.server.domain.contract.IContract;
 import com.simple.server.lifecycle.HqlStepsType;
 import com.simple.server.mediators.CommandType;
 import com.simple.server.statistics.time.Timing;
+import com.simple.server.util.DateTimeConverter;
 
 @SuppressWarnings("static-access")
 @Service("BusClientMsgTask")
@@ -62,7 +63,7 @@ public class BusClientMsgTask extends AbstractTask {
 				appConfig.getBusClientMsgQueue().drainTo(list, MAX_NUM_ELEMENTS);
 		}
 		
-		String datetime = new SimpleDateFormat(AppConfig.DATEFORMAT).format(Calendar.getInstance().getTime());		
+		String datetime = DateTimeConverter.getCurDate();		
 		
 		for(AContract msg: list){
 			
