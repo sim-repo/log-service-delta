@@ -1,7 +1,7 @@
 package com.simple.server.config;
 
 public enum EndpointType {
-	LOG("LOG"), NAV("NAV"), BTX("BTX"), ONE("ONE"), OKTELL("OKTELL"), CRM("CRM"), UNKNOWN("UNKNOWN");
+	LOG("LOG"), NAV("NAV"), BTX("BTX"), DXBX("DXBX"), ONE("ONE"), OKTELL("OKTELL"), CRM("CRM"), UNKNOWN("UNKNOWN");
 
 	private final String value;
 
