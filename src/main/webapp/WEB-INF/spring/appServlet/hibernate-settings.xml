@@ -74,6 +74,7 @@
 				<value>hbm/mysql/PubSuccessMsg.hbm.xml</value>
 				<value>hbm/mysql/SubSuccessMsg.hbm.xml</value>		
 				<value>hbm/mysql/LogBusDefErrMsg.hbm.xml</value>
+				<value>hbm/mysql/RoutingRedirect.hbm.xml</value>
 			</list>
 		</property>		
 	</bean>

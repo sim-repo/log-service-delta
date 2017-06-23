@@ -49,8 +49,7 @@ public class BasePhaser extends AbstractTask {
         return currNumPhase.get();
     }
 
-    public void nextPhase(){
-    	System.out.println("log :"+currNumPhase);
+    public void nextPhase(){    	
         phaser.arrive();
         currNumPhase.getAndIncrement();
         super.setChanged();

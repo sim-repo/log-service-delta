@@ -74,8 +74,7 @@ public class SrvDispatcherTask extends AbstractTask {
 	        		appConfig.getSysMsgQueue().put(msg);
 	        	}	        	
 	        }
-        }catch(Exception e){
-        	System.out.println("error in dispatcher task:");
+        }catch(Exception e){        	
         	e.printStackTrace();
         }               
       

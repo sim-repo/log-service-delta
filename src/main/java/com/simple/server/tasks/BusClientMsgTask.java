@@ -58,10 +58,10 @@ public class BusClientMsgTask extends AbstractTask {
 
 		Thread.currentThread().sleep(Timing.getSleep());
 
-		while (basePhaser.getCurrNumPhase() != HqlStepsType.START.ordinal()) {
-			if (appConfig.getBusClientMsgQueue().size() > 0)
-				appConfig.getBusClientMsgQueue().drainTo(list, MAX_NUM_ELEMENTS);
-		}
+	//	while (basePhaser.getCurrNumPhase() != HqlStepsType.START.ordinal()) {
+	//		if (appConfig.getBusClientMsgQueue().size() > 0)
+		//		appConfig.getBusClientMsgQueue().drainTo(list, MAX_NUM_ELEMENTS);
+		//}
 		
 		String datetime = DateTimeConverter.getCurDate();		
 		

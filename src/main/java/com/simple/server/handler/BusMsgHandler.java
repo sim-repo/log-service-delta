@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 public class BusMsgHandler extends AbstractMsgHandler{
 	
 	
-	public void handleBusJsonMsg(String json) throws Exception {				
-		System.out.println("log-service:::::"+ json);
+	public void handleBusJsonMsg(String json) throws Exception {						
 		getAppConfig().getDirtyBusJsonQueue().put(json);
 	}
 

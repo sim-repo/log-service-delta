@@ -54,10 +54,10 @@ public class BusLogMsgTask extends AbstractTask  {
 
 		Thread.currentThread().sleep(Timing.getSleep());
 
-		while (basePhaser.getCurrNumPhase() != HqlStepsType.START.ordinal()) {
-			if (appConfig.getBusLogMsgQueue().size() > 0)
-				appConfig.getBusLogMsgQueue().drainTo(list, MAX_NUM_ELEMENTS);
-		}
+		//while (basePhaser.getCurrNumPhase() != HqlStepsType.START.ordinal()) {
+		//	if (appConfig.getBusLogMsgQueue().size() > 0)
+		//		appConfig.getBusLogMsgQueue().drainTo(list, MAX_NUM_ELEMENTS);
+		//}
 		
 		appConfig.getMsgService().insertBus(list);
 		list.clear();

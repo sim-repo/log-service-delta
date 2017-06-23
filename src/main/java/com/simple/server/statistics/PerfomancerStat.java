@@ -49,7 +49,7 @@ public class PerfomancerStat implements Statistic {
         unitSumPerTimeInterval = 0l;
         measurementQty++;
 
-        System.out.println("stat:"+(unitTotalSum/measurementQty));
+       // System.out.println("stat:"+(unitTotalSum/measurementQty));
     }
 
     public void addStatToTask(Class clazz){
