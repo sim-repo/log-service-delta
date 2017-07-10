@@ -44,13 +44,12 @@
 	
 	<int-jms:inbound-gateway request-channel="busLogChannel"
 		request-destination="blq" connection-factory="inboundConnectionFactory"
-		recovery-interval="1" receive-timeout="1" reply-timeout="1"
-		request-timeout="1" />
+		recovery-interval="0" receive-timeout="1" reply-timeout="1" />
 
 		
 	<int-jms:inbound-gateway request-channel="srvLogChannel"
 		request-destination="slq" connection-factory="inboundConnectionFactory"
-		recovery-interval="5" receive-timeout="1" reply-timeout="1"
+		recovery-interval="0" receive-timeout="1" reply-timeout="1"
 		request-timeout="1" />
 
 

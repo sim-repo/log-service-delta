@@ -58,10 +58,10 @@ public class SrvDispatcherTask extends AbstractTask {
                        
         Thread.currentThread().sleep(Timing.getSleep());
         
-       //while (appConfig.getDirtyJsonQueue().size()>0) {
-       // 	Thread.currentThread().sleep(Timing.getTimeMaxSleep());	 
+       while (appConfig.getDirtySrvJsonQueue().size()>0) {
+        	Thread.currentThread().sleep(Timing.getSleep());	 
         	appConfig.getDirtySrvJsonQueue().drainTo(list, MAX_NUM_ELEMENTS);
-    	//}
+    	}
         
         try{
 	        for(String json: list) {    	        		       

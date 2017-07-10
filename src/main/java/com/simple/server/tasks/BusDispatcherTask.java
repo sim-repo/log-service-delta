@@ -5,6 +5,7 @@ import com.simple.server.config.AppConfig;
 import com.simple.server.domain.AContract;
 import com.simple.server.domain.AbstractLogMsg;
 import com.simple.server.domain.contract.IContract;
+import com.simple.server.lifecycle.HqlStepsType;
 import com.simple.server.mediators.CommandType;
 import com.simple.server.statistics.time.Timing;
 
@@ -51,17 +52,16 @@ public class BusDispatcherTask extends AbstractTask {
 		if (appConfig.getDirtyBusJsonQueue().drainTo(list, MAX_NUM_ELEMENTS) == 0) {
 			list.add(appConfig.getDirtyBusJsonQueue().take());
 		}
-		Thread.currentThread().sleep(Timing.getSleep());
-
-		// while (appConfig.getDirtyJsonQueue().size()>0) {
-		// Thread.currentThread().sleep(Timing.getTimeMaxSleep());
-		appConfig.getDirtyBusJsonQueue().drainTo(list, MAX_NUM_ELEMENTS);
+		
+	//	while (basePhaser.getCurrNumPhase() != HqlStepsType.START.ordinal()){
+		//	 if (appConfig.getDirtyBusJsonQueue().size() > 0)
+		//		 appConfig.getDirtyBusJsonQueue().drainTo(list, MAX_NUM_ELEMENTS);
 		// }
-
+				
 		try {
 			for (String json : list) {
 				IContract msg = mapper.readValue(json, IContract.class);
-				Thread.currentThread().sleep(Timing.getSleep());			
+				Thread.currentThread().sleep(5l);			
 				if (msg instanceof AContract) {					
 					appConfig.getBusClientMsgQueue().put((AContract)msg);
 				}			
@@ -72,7 +72,6 @@ public class BusDispatcherTask extends AbstractTask {
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-
 		list.clear();
 	}
 

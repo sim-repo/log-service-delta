@@ -31,7 +31,7 @@ public class ServiceImpl implements IService{
 	@Override
 	@Transactional
 	public void insertBus(List<IContract> msgList) throws Exception {
-		getAppConfig().getMsgDao().insertBus(msgList);
+		getAppConfig().getMsgDao().batchInsertBus(msgList);
 	}
 	
 	@Override
