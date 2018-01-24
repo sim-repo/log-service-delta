@@ -1,10 +1,6 @@
 package com.simple.server.domain;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
-import com.simple.server.config.AppConfig;
-import com.simple.server.config.EndpointType;
 import com.simple.server.config.ErrorType;
 import com.simple.server.domain.contract.IContract;
 import com.simple.server.util.DateTimeConverter;
@@ -71,12 +67,12 @@ public abstract class AContract implements IContract {
 		this.eventId = eventId;
 	}
 	
-	public EndpointType getSenderId() {
-		return EndpointType.fromValue(senderId);
+	public String getSenderId() {
+		return senderId;
 	}
 	
-	public void setSenderId(EndpointType senderId) {
-		this.senderId = senderId.toString();
+	public void setSenderId(String senderId) {
+		this.senderId = senderId;
 	}
 	
 	public String getEndPointId() {
@@ -87,12 +83,12 @@ public abstract class AContract implements IContract {
 		this.endPointId = endPointId;
 	}
 	
-	public EndpointType getSubscriberId() {
-		return EndpointType.fromValue(subscriberId);
+	public String getSubscriberId() {
+		return subscriberId;
 	}
 
-	public void setSubscriberId(EndpointType subscriberId) {
-		this.subscriberId = subscriberId.toValue();
+	public void setSubscriberId(String subscriberId) {
+		this.subscriberId = subscriberId;
 	}
 
 	public String getSubscriberHandler() {
@@ -111,12 +107,12 @@ public abstract class AContract implements IContract {
 		this.subscriberStoreClass = subscriberStoreClass;
 	}
 
-	public EndpointType getPublisherId() {
-		return EndpointType.fromValue(publisherId);
+	public String getPublisherId() {
+		return publisherId;
 	}
 
-	public void setPublisherId(EndpointType publisherId) {
-		this.publisherId = publisherId.toValue();
+	public void setPublisherId(String publisherId) {
+		this.publisherId = publisherId;
 	}
 
 	public String getPublisherHandler() {

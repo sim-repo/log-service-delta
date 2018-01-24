@@ -41,7 +41,7 @@ public class MsgDaoImpl implements MsgDao{
 		int count=0;
 		for(IContract msg: msgList){
 			try{			
-				//System.out.println("log: "+msg);
+				System.out.println("log: "+msg);
 				currentSession().save(msg);	
 			}catch(SQLException e){
 				e.printStackTrace();

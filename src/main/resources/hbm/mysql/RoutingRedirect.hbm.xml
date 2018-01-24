@@ -11,9 +11,7 @@
 		</id>
 		
 		<property name="methodName" column="[method_name]" />
-		
 		<property name="useAuth" column="[use_auth]" />
-			
 		<property name="url" column="[url]"/>											
 	</class>
 </hibernate-mapping>
