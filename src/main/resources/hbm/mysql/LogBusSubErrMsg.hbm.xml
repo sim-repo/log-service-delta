@@ -9,7 +9,15 @@
 			<generator class="native" />
 		</id>							
 		
-		<property name="errorId" column="[error_id]" />
+	
+		
+		<property name="errorId" column="[error_id]">
+		    <type name="org.hibernate.type.EnumType">
+		        <param name="enumClass">com.simple.server.config.ErrorType</param>
+		        <param name="useNamed">true</param>
+		    </type>
+		</property>
+		
 		<property name="juuid" column="[uuid]"/>		
 		<property name="eventId" column="[event_id]"/>					
 		<property name="details" column="[details]"/>		
