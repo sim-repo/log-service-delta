@@ -20,6 +20,7 @@
 		<property name="juuid" column="[uuid]"/>		
 		<property name="eventId" column="[event_id]"/>					
 		<property name="details" column="[details]"/>		
+		<property name="externalError" column="[is_external_error]"/>
 		<property name="senderId" column="[sender_id]"/>
 		<property name="subscriberId" column="[subscriber_id]"/>
 		<property name="logDatetime" column="[log_datetime]"/>

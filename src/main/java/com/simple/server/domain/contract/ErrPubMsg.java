@@ -11,6 +11,8 @@ public class ErrPubMsg extends AContract{
 	
 	private Integer id;
 	private String storeClass;	
+	private Boolean externalError;
+	
 	
 	public Integer getId() {
 		return id;
@@ -23,6 +25,12 @@ public class ErrPubMsg extends AContract{
 	}
 	public void setStoreClass(String storeClass) {
 		this.storeClass = storeClass;
+	}
+	public Boolean getExternalError() {
+		return externalError;
+	}
+	public void setExternalError(Boolean externalError) {
+		this.externalError = externalError;
 	}
 	
 }
