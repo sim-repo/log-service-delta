@@ -21,7 +21,7 @@
 	<bean id="mysqlDS"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/jdb?serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&amp;useUnicode=true;" />
+		<property name="url" value="jdbc:mysql://localhost:3306/jdb?serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&amp;useUnicode=true;" />											
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
